@@ -1,5 +1,5 @@
 # django-vue-play2learn-template
-A template for starting the final Play2Learn project with Django and Vue.
+A template for starting the final Play2Learn project with Django and Vue.  This is my final project and I hope I do well!
 
 ## How to use this template?
 1. If you don't have a [GitHub](https://github.com/) account, create a new account. Otherwise, log in. 
