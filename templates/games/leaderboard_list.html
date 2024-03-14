@@ -7,7 +7,7 @@
   <ul class="list-group list-group-flush mb-3">
     {% for game in leaderboard_list %}
       <li class="list-group-item">
-        <a href="{% url 'games:detail' game.pk %}">
+        <a href="{{ game.get_absolute_url }}">
         {{ game.username }} - {{ game.time }}, {{ game.game_type }}
         [{{ game.game_settings }}], (Score = {{ game.final_score }})</a></li>
     {% endfor %}
