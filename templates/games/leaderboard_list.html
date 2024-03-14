@@ -9,7 +9,8 @@
       <li class="list-group-item">
         <a href="{{ game.get_absolute_url }}">
         {{ game.username }} - {{ game.time }}, {{ game.game_type }}
-        [{{ game.game_settings }}], (Score = {{ game.final_score }})</a></li>
+        [{{ game.game_settings }}], (Score = {{ game.final_score }})</a>
+      </li>
     {% endfor %}
   </ul>
 {% endblock %}
