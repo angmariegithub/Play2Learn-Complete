@@ -1,8 +1,7 @@
 #from django.shortcuts import render
 
 # Create your views here.
-from django.views.generic import TemplateView
-from django.views.generic import ListView
+from django.views.generic import DetailView, ListView, TemplateView
 from .models import Leaderboard
 
 class MathFactsView(TemplateView):
@@ -10,6 +9,10 @@ class MathFactsView(TemplateView):
 
 class AnagramHuntView(TemplateView):
     template_name = "anagram-hunt.html"
+    
+class LeaderboardDetailView(DetailView):
+    model = Leaderboard 
 
 class LeaderboardListView(ListView):
     model = Leaderboard
+
