@@ -1,5 +1,7 @@
+from django.conf import settings
 from django.db import models
 from django.urls import reverse
+
 
 from common.utils.text import unique_slug
 
@@ -30,10 +32,9 @@ class Category(models.Model):
     
 class Leaderboard(models.Model):
     username = models.TextField(max_length=20)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     time = models.DateTimeField(auto_now_add=True)
-    #game_type = models.TextField(max_length=20)
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
-    #game_settings = models.TextField(max_length=20)
     final_score = models.TextField(max_length=10)
     slug = models.SlugField(max_length=50, unique=True, 
                             null=False, editable=False)
