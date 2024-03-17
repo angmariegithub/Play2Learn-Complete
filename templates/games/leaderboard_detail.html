@@ -9,9 +9,11 @@
       <h5 class="card-title">{{ leaderboard.final_score }}</h5>
     </div>
     <div class="card-footer">
+      <div class="border-bottom border-faded pb-2">
+        <strong>Category:</strong> {{ leaderboard.category.category }}<br>
+      </div>
       <small class="text-muted"> 
-        {{ leaderboard.game_type }} [{{ leaderboard.game_settings }}] 
-        ~~ Played: {{ leaderboard.time }}
+        {{ leaderboard.time }}
       </small>
     </div>
   </div>

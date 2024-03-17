@@ -7,3 +7,5 @@ class ContactUsForm(forms.Form):
     comments = forms.CharField(
         widget=forms.Textarea(attrs={'cols': '100', 'rows': '5'})
     )
+
+   # might need to add the section that is in games/forms.py

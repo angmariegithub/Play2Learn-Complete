@@ -3,14 +3,24 @@
 {% block title %}Game Stats{% endblock %}
 {% block main %}
   <h2>Games</h2>
-
-  <ul class="list-group list-group-flush mb-3">
-    {% for game in leaderboard_list %}
-      <li class="list-group-item">
-        <a href="{{ game.get_absolute_url }}">
-        {{ game.username }} - {{ game.time }}, {{ game.game_type }}
-        [{{ game.game_settings }}], (Score = {{ game.final_score }})</a>
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="table-responsive">
+    <table class="table table-striped" style="min-width: 500px">
+      <thead>
+        <tr>
+          <th>User</th><th>Game</th><th>Score</th><th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for game in leaderboard_list %}
+          <tr>
+            <td><a href="{{ game.get_absolute_url }}">{{ game.username }}</a></td>
+            <td> {{ game.category }} </td>
+            <td>{{ game.final_score }}</td>
+            <td>{{ game.time }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 {% endblock %}
+
