@@ -46,7 +46,8 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="{% url 'my-account' %}">My Account</a>
-              <a class="dropdown-item" href="#">My Games</a>
+              <a class="dropdown-item" href="{% url 'games:user' user.username %}?order=username&direction=desc">
+                My Games</a>
               <div class="dropdown-divider"></div>
               <form method="post" action="{% url 'account_logout' %}">
                 {% csrf_token %}

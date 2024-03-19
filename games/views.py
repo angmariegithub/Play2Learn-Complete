@@ -28,11 +28,7 @@ class LeaderboardDetailView(DetailView):
 
 class LeaderboardListView(ListView):
     model = Leaderboard
-
-    def get_ordering(self):
-        # default ordering will be '-final_score'
-        ordering = self.request.GET.get('order', '-final_score')
-        return ordering
+    ordering = ['-final_score']
     
 
 class LeaderboardUpdateView(UpdateView):
