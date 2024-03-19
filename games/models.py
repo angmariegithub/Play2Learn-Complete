@@ -35,7 +35,7 @@ class Leaderboard(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     time = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
-    final_score = models.TextField(max_length=10)
+    final_score = models.IntegerField()
     slug = models.SlugField(max_length=50, unique=True, 
                             null=False, editable=False)
 
