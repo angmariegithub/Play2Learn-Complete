@@ -56,17 +56,20 @@
           </li>
         {% endif %}
       </ul>
-      <form class="row my-2 my-lg-0 row">
-        <input class="form-control me-sm-2 col" type="search"
-        placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0 me-4 col" type="submit">
-          Search
-        </button>
-      </form>
     </div>
   </nav>
 </header>
 <main class="m-4 pb-5">
+  {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <div class="alert message{{ message.tags }} alert-dismissible" role="alert">
+          <strong>{{message}}</strong>
+          <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    </ul>
+  {% endif %}
   {% block main %}<h2>Welcome!</h2>{% endblock %}
 </main>
 <footer class="fixed-bottom bg-light row">

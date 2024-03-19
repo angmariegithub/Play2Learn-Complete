@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'users.apps.UsersConfig',
     'contact.apps.ContactConfig',
+    'reviews.apps.ReviewsConfig',
 ]
 
 SITE_ID = 1

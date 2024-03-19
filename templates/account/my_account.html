@@ -12,9 +12,12 @@
       {{ form|crispy }}
       <button class="form-control btn btn-primary">UPDATE</button>
     </form>
+    
   </div>
   <div class="card-footer text-center">
     <p><a href="{% url 'account_change_password' %}">Change Password</a></p>
   </div>
-</div>
+  <div class="text-center" style="font-size: 24px;">
+    <p><a style="color: purple;" href="{% url 'reviews:app' %}">Leave a Review</a></p>
+  </div>
 {% endblock %}
