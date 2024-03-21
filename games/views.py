@@ -30,7 +30,6 @@ class LeaderboardListView(ListView):
     model = Leaderboard
     ordering = ['-final_score']
     
-
 class LeaderboardUpdateView(UpdateView):
     model = Leaderboard
     fields = ['username', 'final_score']
