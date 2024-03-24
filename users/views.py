@@ -9,7 +9,7 @@ from django.shortcuts import get_object_or_404
 from allauth.account.views import PasswordChangeView
 
 from .forms import CustomUserChangeForm
-from games.models import Leaderboard
+from leaderboard.models import Leaderboard
 
 class CustomPasswordChangeView(LoginRequiredMixin, PasswordChangeView):
     success_url = reverse_lazy('my-account')

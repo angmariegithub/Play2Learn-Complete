@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     # local apps
     "games.apps.GamesConfig",
+    'leaderboard.apps.LeaderboardConfig',
     'pages.apps.PagesConfig',
     'users.apps.UsersConfig',
     'contact.apps.ContactConfig',
