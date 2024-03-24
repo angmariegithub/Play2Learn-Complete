@@ -39,3 +39,4 @@ class MyGamesPageView(LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
         context['leaderboard'] = Leaderboard.objects.all()
         return context
+    

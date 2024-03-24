@@ -1,6 +1,7 @@
 from django.urls import path
 
-from .views import CustomPasswordChangeView, MyAccountPageView, MyGamesPageView
+from .views import (CustomPasswordChangeView, MyAccountPageView, 
+                    MyGamesPageView)
 
 urlpatterns = [
     path(

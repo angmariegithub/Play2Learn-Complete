@@ -27,6 +27,7 @@ urlpatterns = [
     path('account/', include('allauth.urls')),
 
     #Local Apps
+    #path('math-facts/', include('games.urls')),
     path('games/', include("games.urls")), 
     path('contact/', include('contact.urls')),
     path('reviews/', include('reviews.urls')),
