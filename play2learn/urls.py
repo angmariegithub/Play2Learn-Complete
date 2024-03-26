@@ -16,6 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+#from mathfacts.views import (SaveGameDataView)
+
+
+
 
 urlpatterns = [
     # Admin
@@ -27,9 +31,11 @@ urlpatterns = [
     path('account/', include('allauth.urls')),
 
     #Local Apps
-    path('math-facts/', include('games.urls')),
-    path('games/', include("leaderboard.urls")), 
+    path('math-facts/', include('mathfacts.urls')),
+    path('anagram-hunt/', include('anagrams.urls')),
+    path('leaderboard/', include("leaderboard.urls")), 
     path('contact/', include('contact.urls')),
     path('reviews/', include('reviews.urls')),
     path('', include('pages.urls')),
+    path('games/', include('games.urls')),
 ]

@@ -48,8 +48,10 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
 
     # local apps
-    "games.apps.GamesConfig",
+    'anagrams.apps.AnagramsConfig',
+    'games.apps.GamesConfig',
     'leaderboard.apps.LeaderboardConfig',
+    'mathfacts.apps.MathfactsConfig',
     'pages.apps.PagesConfig',
     'users.apps.UsersConfig',
     'contact.apps.ContactConfig',

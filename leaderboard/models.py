@@ -7,7 +7,7 @@ from common.utils.text import unique_slug
     
 class Leaderboard(models.Model):
     username = models.TextField(max_length=20)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
+    #user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     time = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
     final_score = models.IntegerField()

@@ -27,3 +27,4 @@ class LeaderboardListView(ListView):
 class LeaderboardUpdateView(UpdateView):
     model = Leaderboard
     fields = ['username', 'final_score']
+

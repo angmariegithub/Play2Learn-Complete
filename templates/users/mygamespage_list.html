@@ -13,7 +13,7 @@
       <tbody>
         {% for game in mygamespage_list %}
           <tr>
-            <td><a href="{{ game.get_absolute_url }}">{{ game.username }}</a></td>
+            <td><a href="{{ leaderboard.get_absolute_url }}">{{ game.username }}</a></td>
             <td> {{ game.category }} </td>
             <td>{{ game.final_score }}</td>
             <td>{{ game.time }}</td>

@@ -1,5 +1,11 @@
 {% extends "_base.html" %}
-
+{% load static %}
+{% block javascript %}
+  <script>
+    const ajaxURL = "{% url 'games:save_data' %}";
+  </script>
+  <script src="{% static 'dist/js/static/dist/js/chunk-vendors.fe524f45.js' %}"></script>
+{% endblock %}
 {% block title %}Game Stats{% endblock %}
 {% block main %}
   <h2>Games</h2>
@@ -13,7 +19,7 @@
       <tbody>
         {% for game in leaderboard_list %}
           <tr>
-            <td><a href="{{ game.get_absolute_url }}">{{ game.username }}</a></td>
+            <td><a href="{{ leaderboard.get_absolute_url }}">{{ game.username }}</a></td>
             <td> {{ game.category }} </td>
             <td>{{ game.final_score }}</td>
             <td>{{ game.time }}</td>

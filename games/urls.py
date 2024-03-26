@@ -1,8 +1,8 @@
 from django.urls import path
 
-from .views import (MathFactsView, AnagramHuntView)
+from .views import (SaveData)
 
+app_name = 'games'
 urlpatterns = [
-    path('math-facts/', MathFactsView.as_view(), name='math-facts'),
-    path('anagram-hunt/', AnagramHuntView.as_view(), name='anagram-hunt'),
+    path('save_data/', SaveData, name='save_data'),
 ]

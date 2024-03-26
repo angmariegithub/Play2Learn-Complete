@@ -96,6 +96,8 @@
         <div class="display-3">{{ score }}</div>
         <p>questions</p>
       </div>
+
+
       <div class="row d-flex flex-col text-center">
         <button @click="play" class="btn btn-primary w-100 m-1">Play Again</button>
         <button @click="screen = 'start'" class="btn btn-secondary w-100 m-1">Back to Start Screen</button>
@@ -111,6 +113,7 @@
 </style>
 
 <script>
+import axios from 'axios';
 import { getRandomInteger } from '@/helpers/helpers';
 
 export default {
@@ -158,10 +161,21 @@ export default {
         this.number2 = num2;
       }
     },
-    async recordScore() {
+    async recordScore(score, operation) {
+      try {
+        console.log("Score:", score);
+        console.log("Operation:", operation);
+        const response = await axios.post('/games/save_data/', {
+          score: score,
+          operation: operation
+        });
+        console.log(response.data);
+      }catch (error) {
+        console.error(error);
+      }
+    }
       // TODO: when Math Facts finishes, make an Ajax call with axios (this.axios)
       // to record the score on the backend
-    }
   },
   computed: {
     correctAnswer() {
@@ -202,7 +216,7 @@ export default {
         clearInterval(this.interval);
         this.timeLeft = 60;
         this.screen = "end";
-        this.recordScore(); // call to record score
+        this.recordScore(this.score, this.operation); // call to record score
       }
     }
   }

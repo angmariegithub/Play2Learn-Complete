@@ -3,7 +3,7 @@ from django.urls import path
 from .views import (LeaderboardDeleteView,  
                     LeaderboardListView, LeaderboardDetailView)
 
-app_name = 'games'
+app_name = 'leaderboard'
 urlpatterns = [
     path('', LeaderboardListView.as_view(), name='list'),
     path('leaderboard/<slug>/delete/', LeaderboardDeleteView.as_view(), name='delete'),
