@@ -10,7 +10,7 @@ def SaveData(request):
 
     # Set simple variables.
     fs = data['score'] 
-    cat = 'Math ' + data['operation']
+    cat = data['operation']
     print('made it here')
     if username.is_anonymous: # User not logged in. Can't vote.
         msg = 'Sorry, you have to be logged in to track games'

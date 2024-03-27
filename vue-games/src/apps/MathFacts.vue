@@ -167,7 +167,7 @@ export default {
         console.log("Operation:", operation);
         const response = await axios.post('/games/save_data/', {
           score: score,
-          operation: operation
+          operation: 'Math ' + operation
         });
         console.log(response.data);
       }catch (error) {

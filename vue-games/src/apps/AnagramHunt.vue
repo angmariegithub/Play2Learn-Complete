@@ -69,6 +69,7 @@
 </style>
 
 <script>
+import axios from 'axios';
 import anagrams from "@/helpers/anagrams";
 import {getRandomInteger} from "@/helpers/helpers";
 
@@ -126,7 +127,18 @@ export default {
       this.currentWord = this.anagramList[getRandomInteger(0, this.anagramList.length)];
       this.correctGuesses = [];
     },
-    async recordScore() {
+    async recordScore(score, wordLength) {
+    try {
+      console.log("Score:", score);
+      console.log("Operation:", wordLength);
+      const response = await axios.post('/games/save_data/', {
+        score: score,
+        operation: 'Anagrams ' + wordLength
+      });
+      console.log(response.data);
+    }catch (error) {
+      console.error(error);
+    } 
       // TODO: when Anagram Hunt finishes, make an Ajax call with axios (this.axios)
       // to record the score on the backend
     }
@@ -141,7 +153,7 @@ export default {
         this.screen = "end";
         this.timeLeft = 60;
         clearInterval(this.interval);
-        this.recordScore(); // calls recordScore
+        this.recordScore(this.score, this.wordLength); // calls recordScore
       }
     }
   }
