@@ -1,0 +1,25 @@
+{% extends "_base.html" %}
+
+{% block title %}Anagram Game Stats{% endblock %}
+{% block main %}
+  <h2 style="text-align: center;">Anagram Game Stats</h2>
+  <div class="table-responsive">
+    <table class="table table-striped" style="min-width: 500px">
+      <thead>
+        <tr>
+          <th>User</th><th>Game</th><th>Score</th><th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for game in anagramleader_list %}
+          <tr>
+            <td><a href="{{ leaderboard.get_absolute_url }}">{{ game.username }}</a></td>
+            <td> {{ game.category }} </td>
+            <td>{{ game.final_score }}</td>
+            <td>{{ game.time }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

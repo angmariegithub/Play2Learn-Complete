@@ -11,7 +11,6 @@ def SaveData(request):
     # Set simple variables.
     fs = data['score'] 
     cat = data['operation']
-    print('made it here')
     if username.is_anonymous: # User not logged in. Can't vote.
         msg = 'Sorry, you have to be logged in to track games'
         response = {'msg':msg}
@@ -22,7 +21,6 @@ def SaveData(request):
         game_data = Leaderboard(username=username, final_score=fs, 
                                 category_id=category_id)
         game_data.save()
-    print('made it here')
     
 
 
