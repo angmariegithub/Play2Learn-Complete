@@ -3,11 +3,19 @@
 {% block title %}Home{% endblock %}
 {% block main %}
   <h2 style="text-align: center">Welcome!</h2>
-  <p style="text-align: center;">Ready to play?</p>
+   <p style="text-align: center;">Ready to Play?</p>
+
   <div id="clients1" style="text-align: center; margin:auto; background-color: lightblue;">
-    <h4>Happy clients say ... </h4>
-    <p>This is the best game ever!</p>  
-    <p>                           Justin Jest</p>
+    <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+         {% for review in userreviews_list %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <p> "{{ review.user_review }}"</p>
+            </div>
+        {% endfor %}
+        
+      </div>
+    </div>
   </div>
   <section>
     <div class="container row">

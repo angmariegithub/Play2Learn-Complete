@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block javascript %}{% endblock %}
 <title>{% block title %}{% endblock %}</title>
 <!-- Bootstrap CSS CDN-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -10,8 +11,8 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: lightpink !important;">
-      <a class="navbar-brand" style="font-size: xx-large;" href="{% url 'pages:homepage' %}">Play2Learn</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse"
+      <a class="navbar-brand" style="font-size: xx-large;" href="{% url 'reviews:list' %}">Play2Learn</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbar-content" aria-expanded="false"
         aria-controls="navbar-content" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -20,7 +21,7 @@
       <div class="collapse navbar-collapse" id="navbar-content">
         <ul class="navbar-nav me-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'pages:homepage' %}">Home 
+            <a class="nav-link" href="{% url 'reviews:list' %}">Home 
               <span class="sr-only"></span>
             </a>
           </li>
@@ -57,7 +58,7 @@
                 <a class="dropdown-item" href="{% url 'my-account' %}">My Account</a>
                 <a class="dropdown-item" href="{% url 'my-games' %}">
                   My Games</a>
-                <a class="dropdown-item" href="{% url 'reviews:app' %}">Leave a Review</a>
+                <a class="dropdown-item" href="{% url 'reviews:create' %}">Leave a Review</a>
                 <div class="dropdown-divider"></div>
                 <form method="post" action="{% url 'account_logout' %}">
                   {% csrf_token %}
@@ -72,6 +73,8 @@
   </header>
   {% block main %}{% endblock %}
   <div id="app"></div>
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <footer class="fixed-bottom bg-light row">
     <div class="col">
       <div class="float-end m-1 me-2">Copyright &copy; 2024 Play2Learn.</div>
@@ -87,7 +90,5 @@
       </nav>
     </div>
 </footer>
-  <!-- Bootstrap JS CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

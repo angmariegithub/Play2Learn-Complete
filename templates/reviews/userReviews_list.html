@@ -1,0 +1,39 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block title %}Reviews{% endblock %}
+{% block main %}
+  <h2>Reviews</h2>
+  <div class="table-responsive">
+    <table class="table table-striped" style="min-width: 500px">
+      <thead>
+        <tr>
+          <th>User</th><th>Review</th><th>Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for review in userreviews_list %}
+          <tr>
+            <td> {{ review.user }}</td>
+            <td> {{ review.user_review }} </td>
+            <td>{{ review.created }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div id="clients1" style="text-align: center; margin:auto; background-color: lightsalmon;">
+    <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+         {% for review in userreviews_list %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <p> {{ review.user }}</p>
+              <p> {{ review.user_review }} </p>
+              <p>{{ review.created }}</p>
+            </div>
+        {% endfor %}
+        
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

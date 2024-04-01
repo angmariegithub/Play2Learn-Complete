@@ -13,8 +13,8 @@
 <body>
 <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: lightpink !important;">
-    <a class="navbar-brand" style="font-size: xx-large;" href="{% url 'pages:homepage' %}">Play2Learn</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
+    <a class="navbar-brand" style="font-size: xx-large;" href="{% url 'reviews:list' %}">Play2Learn</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
       data-bs-target="#navbar-content" aria-expanded="false"
       aria-controls="navbar-content" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -23,7 +23,7 @@
     <div class="collapse navbar-collapse" id="navbar-content">
       <ul class="navbar-nav me-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="{% url 'pages:homepage' %}">Home 
+          <a class="nav-link" href="{% url 'reviews:list' %}">Home 
             <span class="sr-only">(current)</span>
           </a>
         </li>
@@ -102,6 +102,12 @@
     </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      var myCarousel = document.getElementById('reviewCarousel');
+      var carousel = new bootstrap.Carousel(myCarousel);
+  });
+</script>
 </body>
 </html>
 

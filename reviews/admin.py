@@ -9,6 +9,6 @@ class UserReviewsAdmin(admin.ModelAdmin):
 
     def get_readonly_fields(self, request, obj=None):
         if obj: # editing an existing object
-            return ('created')
+            return ('slug', 'created')
 
         return ()
